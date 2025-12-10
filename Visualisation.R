@@ -16,3 +16,12 @@ print (df_compare)
 
 boxplot(  Critic_Score ~ Group,  data = df_compare,  main = "Critic Scores: Nintendo vs Other Publishers",  xlab = "Publisher Group",  ylab = "Critic Score")
 
+hist(df_compare$Critic_Score,
+     main = "Histogram of Critic Scores with Normal Distribution Overlay",
+     xlab = "Critic Score",
+     ylab = "Frequency",
+     col = "lightblue",
+     border = "black",
+     freq = FALSE,
+     xlim = c(1,10))   
+
