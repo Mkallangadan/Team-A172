@@ -13,3 +13,6 @@ avg_scores <- df_compare %>%
 
 print (avg_scores)
 print (df_compare)
+
+boxplot(  Critic_Score ~ Group,  data = df_compare,  main = "Critic Scores: Nintendo vs Other Publishers",  xlab = "Publisher Group",  ylab = "Critic Score")
+
