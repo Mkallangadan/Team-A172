@@ -13,3 +13,22 @@ avg_scores <- df_compare %>%
 
 print (avg_scores)
 print (df_compare)
+
+boxplot(  Critic_Score ~ Group,  data = df_compare,  main = "Critic Scores: Nintendo vs Other Publishers",  xlab = "Publisher Group",  ylab = "Critic Score")
+
+hist(df_compare$Critic_Score,
+     main = "Histogram of Critic Scores with Normal Distribution Overlay",
+     xlab = "Critic Score",
+     ylab = "Frequency",
+     col = "lightblue",
+     border = "black",
+     freq = FALSE,
+     xlim = c(1,10))  
+
+curve(dnorm(x,
+            mean = mean(df_compare$Critic_Score, na.rm = TRUE),
+            sd = sd(df_compare$Critic_Score, na.rm = TRUE)),
+      col = "red",
+      lwd = 2,
+      add = TRUE)
+wilcox.test(Critic_Score ~ Group, data = df_compare)
