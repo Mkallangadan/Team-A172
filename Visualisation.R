@@ -23,5 +23,11 @@ hist(df_compare$Critic_Score,
      col = "lightblue",
      border = "black",
      freq = FALSE,
-     xlim = c(1,10))   
+     xlim = c(1,10))  
 
+curve(dnorm(x,
+            mean = mean(df_compare$Critic_Score, na.rm = TRUE),
+            sd = sd(df_compare$Critic_Score, na.rm = TRUE)),
+      col = "red",
+      lwd = 2,
+      add = TRUE)
