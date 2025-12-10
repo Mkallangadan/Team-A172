@@ -31,3 +31,4 @@ curve(dnorm(x,
       col = "red",
       lwd = 2,
       add = TRUE)
+wilcox.test(Critic_Score ~ Group, data = df_compare)
